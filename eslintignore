@@ -1,0 +1,6 @@
+disk/
+node_modules/
+ios/
+android/
+.bundle
+.expo

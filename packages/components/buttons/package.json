@@ -1,0 +1,15 @@
+{
+  "name": "@madhouse/buttons",
+  "version": "0.0.1",
+  "description": "Example Design system button",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/madhouse-buttons.cjs.js",
+  "types": "dist/madhouse-buttons.cjs.d.ts",
+  "module": "dist/madhouse-buttons.esm.js",
+  "react-native": "src/index.ts",
+  "dependencies": {
+    "react": "18.1.0",
+    "react-native": "0.70.14"
+  }
+}

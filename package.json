@@ -13,7 +13,8 @@
     "lint:types": "tsc",
     "lint": "yarn lint:prettier && yarn lint:eslint && yarn lint:types",
     "types": "tsc",
-    "postinstall": "preconstruct dev"
+    "postinstall": "preconstruct dev",
+    "prepare": "husky"
   },
   "prettier": {
     "proseWrap": "always",
@@ -50,5 +51,10 @@
     "eslint-plugin-ft-flow": "^2.0.3",
     "prettier": "^2.8.8",
     "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "husky": "^9.0.11"
   }
 }

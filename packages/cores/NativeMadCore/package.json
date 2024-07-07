@@ -1,0 +1,44 @@
+{
+  "name": "NativeMadCore",
+  "version": "0.0.1",
+  "description": "native mad core module",
+  "private": true,
+  "main": "dist/NativeMadCore.cjs.js",
+  "types": "dist/NativeMadCore.cjs.d.ts",
+  "module": "dist/NativeMadCore.esm.js",
+  "react-native": "src/index.ts",
+  "files": [
+    "js",
+    "ios",
+    "android",
+    "src",
+    "dist",
+    "NativeMadCore.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": [
+    "react-native",
+    "madhouse",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/panicfrog/madhouse.git",
+  "author": "yeyongping burnedfrog@163.com (https://github.com/panicfrog)",
+  "license": "MIT",
+  "dependencies": {
+    "react": "18.1.0",
+    "react-native": "0.70.14"
+  },
+  "codegenConfig": {
+    "name": "NativeMadCoreSpec",
+    "type": "modules",
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "com.madhouse.nativecore"
+    }
+  }
+}

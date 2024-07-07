@@ -982,7 +982,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.24.7"
     "@babel/helper-plugin-utils" "^7.24.7"
 
-"@babel/preset-env@^7.21.5":
+"@babel/preset-env@^7.24.7":
   version "7.24.7"
   resolved "https://registry.npmmirror.com/@babel/preset-env/-/preset-env-7.24.7.tgz#ff067b4e30ba4a72f225f12f123173e77b987f37"
   integrity sha512-1YZNsc+y6cTvWlDHidMBsQZrZfEFjRIo/BZCT906PMdzOyXtSLTgqGdrpcuTDCXyd11Am5uQULtDIcCfnTc8fQ==
@@ -2216,6 +2216,12 @@
   dependencies:
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
+
+NativeMadCore@./packages/cores/NativeMadCore:
+  version "0.0.1"
+  dependencies:
+    react "18.1.0"
+    react-native "0.70.14"
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.6"

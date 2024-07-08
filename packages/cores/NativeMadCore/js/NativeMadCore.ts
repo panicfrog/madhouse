@@ -2,7 +2,7 @@ import type { TurboModule } from 'react-native/Libraries/TurboModule/RCTExport';
 import { TurboModuleRegistry } from 'react-native';
 
 export interface Spec extends TurboModule {
-  add(a: number, b: number): number;
+  appStartAt(): number;
 }
 
 export default TurboModuleRegistry.get<Spec>('NativeMadCore') as Spec | null;

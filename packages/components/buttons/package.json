@@ -8,6 +8,11 @@
   "types": "dist/madhouse-buttons.cjs.d.ts",
   "module": "dist/madhouse-buttons.esm.js",
   "react-native": "src/index.ts",
+  "preconstruct": {
+    "entrypoints": [
+      "src/index.{js,jsx,ts,tsx}"
+    ]
+  },
   "dependencies": {
     "react": "18.1.0",
     "react-native": "0.70.14"

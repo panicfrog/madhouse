@@ -29,6 +29,11 @@
   "repository": "https://github.com/panicfrog/madhouse.git",
   "author": "yeyongping burnedfrog@163.com (https://github.com/panicfrog)",
   "license": "MIT",
+  "preconstruct": {
+    "entrypoints": [
+      "src/index.{js,jsx,ts,tsx}"
+    ]
+  },
   "dependencies": {
     "react": "18.1.0",
     "react-native": "0.70.14"

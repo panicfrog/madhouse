@@ -13,7 +13,6 @@
     "lint:types": "tsc",
     "lint": "yarn lint:prettier && yarn lint:eslint && yarn lint:types",
     "types": "tsc",
-    "postinstall": "preconstruct dev",
     "prepare": "husky"
   },
   "prettier": {

@@ -5,4 +5,4 @@ export interface Spec extends TurboModule {
   appStartAt(): number;
 }
 
-export default TurboModuleRegistry.get<Spec>('NativeMadCore') as Spec | null;
+export default TurboModuleRegistry.getEnforcing<Spec>('NativeMadCore') as Spec;

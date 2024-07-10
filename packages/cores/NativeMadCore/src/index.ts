@@ -1,7 +1,4 @@
-import native from '../js/NativeMadCore'
+import native from '../js/NativeMadCore';
+import nativePipe from './NativeMadPipe';
 
-function helloCore() {
-  return 'Hello Core!';
-}
-
-export { helloCore, native };
+export { native, nativePipe };

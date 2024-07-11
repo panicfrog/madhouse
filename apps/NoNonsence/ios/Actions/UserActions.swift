@@ -1,0 +1,32 @@
+//
+//  UserAction.swift
+//  NoNonsence
+//
+//  Created by 叶永平 on 2024/7/10.
+//
+
+import Foundation
+
+
+public class UserActions: NSObject {
+  @objc public static func registerGetCurrentUserAction() {
+    let typedAction: TypedAction<PlaceHolder, User> = getCurrentUser(params:)
+    switch Dispatcher.shared.resisterTyped(action: typedAction, with: "getCurrentUser") {
+    case .success():
+      print("register typed getCurrentUser success")
+    case .failure(let error):
+      print("register typed getCurrentUser error: \(error)")
+    }
+  }
+}
+
+public struct PlaceHolder: Codable {}
+
+public struct User: Codable {
+  public let firstName: String
+  public let lastName: String
+}
+
+func getCurrentUser(params: PlaceHolder? = nil) -> User? {
+  return User(firstName: "尼古拉斯", lastName: "凯奇")
+}

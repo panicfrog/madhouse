@@ -29,7 +29,7 @@ public class Dispatcher {
     pthread_mutex_destroy(&lock)
   }
   
-  public func register_(action: ActionType, with name: String) -> Result<Void, DispatchError> {
+  public func register(action: ActionType, with name: String) -> Result<Void, DispatchError> {
     pthread_mutex_lock(&lock)
     defer { pthread_mutex_unlock(&lock) }
     guard actions_[name] == nil else {
@@ -39,61 +39,61 @@ public class Dispatcher {
     return .success(())
   }
   
-  public func registerTyped_(action: @escaping TypedAction00,
+  public func registerTyped(action: @escaping TypedAction00,
                              with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action)
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable>(action: @escaping TypedAction01<T>,
+  public func registerTyped<T: Codable>(action: @escaping TypedAction01<T>,
                                          with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable>(action: @escaping TypedAction02<T>,
+  public func registerTyped<T: Codable>(action: @escaping TypedAction02<T>,
                                          with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable>(action: @escaping TypedAction10<T>,
+  public func registerTyped<T: Codable>(action: @escaping TypedAction10<T>,
                                          with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable, R: Codable>(action: @escaping TypedAction11<T, R>,
+  public func registerTyped<T: Codable, R: Codable>(action: @escaping TypedAction11<T, R>,
                                                      with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable, R: Codable>(action: @escaping TypedAction12<T, R>,
+  public func registerTyped<T: Codable, R: Codable>(action: @escaping TypedAction12<T, R>,
                                                      with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable>(action: @escaping TypedAction20<T>,
+  public func registerTyped<T: Codable>(action: @escaping TypedAction20<T>,
                                          with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable, R: Codable>(action: @escaping TypedAction21<T, R>,
+  public func registerTyped<T: Codable, R: Codable>(action: @escaping TypedAction21<T, R>,
                                                      with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func registerTyped_<T: Codable, R: Codable>(action: @escaping TypedAction22<T, R>,
+  public func registerTyped<T: Codable, R: Codable>(action: @escaping TypedAction22<T, R>,
                                                      with name: String) -> Result<Void, DispatchError> {
     let action = convertToActionType(action, coder: MsgpackCoder())
-    return register_(action: action, with: name)
+    return register(action: action, with: name)
   }
   
-  public func call_(action name: String,
+  public func call(action name: String,
                     with params: Optional<Data>) -> Result<Optional<Data>, DispatchError> {
     pthread_mutex_lock(&lock)
     guard let action_ = actions_[name] else {
@@ -191,7 +191,7 @@ public func CallDispatcherAction(_ name: UnsafePointer<CChar>,
     data = nil
   }
   
-  let result = Dispatcher.shared.call_(action: actionName, with: data)
+  let result = Dispatcher.shared.call(action: actionName, with: data)
   switch result {
   case .success(let data):
     var resultData: UnsafeMutablePointer<UInt8>? = nil

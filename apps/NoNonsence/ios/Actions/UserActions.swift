@@ -10,8 +10,8 @@ import Foundation
 
 public class UserActions: NSObject {
   @objc public static func registerGetCurrentUserAction() {
-    let typedAction: TypedAction<PlaceHolder, User> = getCurrentUser(params:)
-    switch Dispatcher.shared.resisterTyped(action: typedAction, with: "getCurrentUser") {
+    let typedAction: TypedAction01 = getCurrentUser
+    switch Dispatcher.shared.registerTyped_(action: typedAction, with: "getCurrentUser") {
     case .success():
       print("register typed getCurrentUser success")
     case .failure(let error):
@@ -27,6 +27,6 @@ public struct User: Codable {
   public let lastName: String
 }
 
-func getCurrentUser(params: PlaceHolder? = nil) -> User? {
+func getCurrentUser() -> User? {
   return User(firstName: "尼古拉斯", lastName: "凯奇")
 }
